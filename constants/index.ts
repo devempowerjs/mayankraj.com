@@ -9,7 +9,7 @@ import {
   RxReader,
 } from "react-icons/rx";
 
-// ✅ Define a shared Skill type so TS knows structure even if array is empty yo
+// ✅ Define a shared Skill type so TS knows structure even if array is empty
 export type Skill = {
   skill_name: string;
   image: string;
