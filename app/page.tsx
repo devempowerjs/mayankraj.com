@@ -5,6 +5,7 @@ import { Projects } from "@/components/main/projects";
 import Skills from "@/components/main/skills";
 import { Achievements } from "@/components/main/achievements";
 
+// yoni
 export default function Home() {
   return (
     <main className="h-full w-full">
