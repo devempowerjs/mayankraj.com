@@ -17,13 +17,16 @@ export const About = () => {
         transition={{ duration: 0.7 }}
         className="flex-shrink-0"
       >
-        <Image
-          src="/mayank-profile.jpg"
-          alt="Mayank Raj profile photo"
-          width={260}
-          height={260}
-          className="rounded-full object-cover shadow-xl border-4 border-purple-600/40 p-1 max-w-[200px] md:max-w-[260px] bg-[#16142a]"
-        />
+        <div className="rounded-full overflow-hidden shadow-xl border-4 border-purple-600/40 p-1 bg-[#16142a]">
+          <Image
+            src="/mayank-profile.png"
+            alt="Mayank Raj profile photo"
+            width={320}
+            height={320}
+            className="rounded-full object-contain w-[240px] h-[240px] md:w-[320px] md:h-[320px] bg-[#16142a]"
+            priority
+          />
+        </div>
       </motion.div>
       {/* Textual About */}
       <motion.div
