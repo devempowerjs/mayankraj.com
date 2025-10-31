@@ -42,8 +42,18 @@ const Skills = () => {
       id="skills"
       className="flex flex-col items-center justify-center py-16 px-4"
     >
-      <h1 className="text-4xl font-bold mb-10">Skills</h1>
+      {/* 💎 Enhanced Heading */}
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold mb-10 text-white drop-shadow-lg bg-black/30 px-4 py-2 rounded-xl backdrop-blur-sm"
+      >
+        Skills
+      </motion.h1>
 
+      {/* ⚡ Skills Grid */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
