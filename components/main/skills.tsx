@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 import { motion } from "framer-motion";
+import Image from "next/image"; // ✅ added direct import for guaranteed image handling
+import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 
 // 🧠 Skill type definition
 type Skill = {
@@ -48,14 +49,17 @@ const Skills = () => {
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
       >
         {FRONTEND_SKILL.map((skill, index) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            index={index} // ✅ added
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-          />
+          <div key={skill.skill_name} className="flex flex-col items-center">
+            <Image
+              src={skill.image}
+              alt={`${skill.skill_name} logo`} // ✅ descriptive alt for SEO & AI
+              width={skill.width}
+              height={skill.height}
+              className="object-contain transition-transform hover:scale-110 duration-300"
+              priority
+            />
+            <p className="mt-2 text-sm text-gray-600">{skill.skill_name}</p>
+          </div>
         ))}
       </motion.div>
 
@@ -68,14 +72,17 @@ const Skills = () => {
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
       >
         {BACKEND_SKILL.map((skill, index) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            index={index} // ✅ added
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-          />
+          <div key={skill.skill_name} className="flex flex-col items-center">
+            <Image
+              src={skill.image}
+              alt={`${skill.skill_name} logo`}
+              width={skill.width}
+              height={skill.height}
+              className="object-contain transition-transform hover:scale-110 duration-300"
+              priority
+            />
+            <p className="mt-2 text-sm text-gray-600">{skill.skill_name}</p>
+          </div>
         ))}
       </motion.div>
 
@@ -88,14 +95,17 @@ const Skills = () => {
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
       >
         {FULLSTACK_SKILL.map((skill, index) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            index={index} // ✅ added
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-          />
+          <div key={skill.skill_name} className="flex flex-col items-center">
+            <Image
+              src={skill.image}
+              alt={`${skill.skill_name} logo`}
+              width={skill.width}
+              height={skill.height}
+              className="object-contain transition-transform hover:scale-110 duration-300"
+              priority
+            />
+            <p className="mt-2 text-sm text-gray-600">{skill.skill_name}</p>
+          </div>
         ))}
       </motion.div>
     </section>
