@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { SkillDataProvider } from "../sub/SkillDataProvider";
+import { SkillDataProvider } from "@/components/sub/skill-data-provider";
+
 import { motion } from "framer-motion";
 
 type Skill = {
