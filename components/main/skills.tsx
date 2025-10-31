@@ -1,10 +1,9 @@
-// for update
 "use client";
 import React from "react";
 import { SkillDataProvider } from "@/components/sub/skill-data-provider";
-
 import { motion } from "framer-motion";
 
+// 🧠 Skill type definition
 type Skill = {
   skill_name: string;
   image: string;
@@ -12,62 +11,26 @@ type Skill = {
   height: number;
 };
 
+// 🎨 Frontend skills
 const FRONTEND_SKILL: Skill[] = [
-  {
-    skill_name: "HTML",
-    image: "/skills/html.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "CSS",
-    image: "/skills/css.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "JavaScript",
-    image: "/skills/javascript.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "React",
-    image: "/skills/react.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Next.js",
-    image: "/skills/nextjs.png",
-    width: 80,
-    height: 80,
-  },
+  { skill_name: "HTML", image: "/skills/html.png", width: 80, height: 80 },
+  { skill_name: "CSS", image: "/skills/css.png", width: 80, height: 80 },
+  { skill_name: "JavaScript", image: "/skills/javascript.png", width: 80, height: 80 },
+  { skill_name: "React", image: "/skills/react.png", width: 80, height: 80 },
+  { skill_name: "Next.js", image: "/skills/nextjs.png", width: 80, height: 80 },
 ];
 
+// ⚙️ Backend skills
 const BACKEND_SKILL: Skill[] = [
-  {
-    skill_name: "Node.js",
-    image: "/skills/nodejs.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Express.js",
-    image: "/skills/express.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "MongoDB",
-    image: "/skills/mongodb.png",
-    width: 80,
-    height: 80,
-  },
+  { skill_name: "Node.js", image: "/skills/nodejs.png", width: 80, height: 80 },
+  { skill_name: "Express.js", image: "/skills/express.png", width: 80, height: 80 },
+  { skill_name: "MongoDB", image: "/skills/mongodb.png", width: 80, height: 80 },
 ];
 
+// 🔗 Combined skills (full stack)
 const FULLSTACK_SKILL: Skill[] = [...FRONTEND_SKILL, ...BACKEND_SKILL];
 
+// 💡 Main Skills Component
 const Skills = () => {
   return (
     <section
@@ -76,7 +39,7 @@ const Skills = () => {
     >
       <h1 className="text-4xl font-bold mb-10">Skills</h1>
 
-      {/* Frontend */}
+      {/* 🎯 Frontend */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -84,9 +47,10 @@ const Skills = () => {
         viewport={{ once: true }}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
       >
-        {FRONTEND_SKILL.map((skill) => (
+        {FRONTEND_SKILL.map((skill, index) => (
           <SkillDataProvider
             key={skill.skill_name}
+            index={index} // ✅ added
             src={skill.image}
             name={skill.skill_name}
             width={skill.width}
@@ -95,7 +59,7 @@ const Skills = () => {
         ))}
       </motion.div>
 
-      {/* Backend */}
+      {/* 🧩 Backend */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,9 +67,10 @@ const Skills = () => {
         viewport={{ once: true }}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
       >
-        {BACKEND_SKILL.map((skill) => (
+        {BACKEND_SKILL.map((skill, index) => (
           <SkillDataProvider
             key={skill.skill_name}
+            index={index} // ✅ added
             src={skill.image}
             name={skill.skill_name}
             width={skill.width}
@@ -114,7 +79,7 @@ const Skills = () => {
         ))}
       </motion.div>
 
-      {/* Fullstack */}
+      {/* 🧠 Fullstack */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -122,9 +87,10 @@ const Skills = () => {
         viewport={{ once: true }}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
       >
-        {FULLSTACK_SKILL.map((skill) => (
+        {FULLSTACK_SKILL.map((skill, index) => (
           <SkillDataProvider
             key={skill.skill_name}
+            index={index} // ✅ added
             src={skill.image}
             name={skill.skill_name}
             width={skill.width}
