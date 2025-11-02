@@ -40,44 +40,55 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center py-16 px-4"
+      className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden"
     >
-      {/* 💎 Enhanced Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-4xl font-bold mb-10 text-white drop-shadow-lg bg-black/30 px-4 py-2 rounded-xl backdrop-blur-sm"
-      >
-        Skills
-      </motion.h1>
+      {/* 🌌 Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+        src="/videos/skills-bg.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-      {/* ⚡ Skills Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
-      >
-        {skills.map((skill, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <Image
-              src={skill.src}
-              alt={`${skill.name} logo`}
-              width={80}
-              height={80}
-              className="object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = "none";
-              }}
-            />
-            <p className="mt-2 text-sm">{skill.name}</p>
-          </div>
-        ))}
-      </motion.div>
+      {/* Overlay for better text visibility */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+
+      {/* Content Layer */}
+      <div className="relative z-10 text-center">
+        <h1 className="text-4xl font-bold mb-10 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.7)]">
+          Skills
+        </h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+        >
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center hover:scale-105 transition-transform"
+            >
+              <Image
+                src={skill.src}
+                alt={`${skill.name} logo`}
+                width={80}
+                height={80}
+                className="object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = "none";
+                }}
+              />
+              <p className="mt-2 text-sm text-gray-200">{skill.name}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };
