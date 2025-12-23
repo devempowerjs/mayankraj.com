@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const ACHIEVEMENTS = [
-  "Best Developer of the Year – E-Cell, IIT Bombay (2025)",
-  "Community Builder Award – Developers Hub (2025)",
-  "Selected in Eureka Junior Skill Development Round (2025)",
-  "Led “Dynamo” Team in Eureka Junior Innovation Challenge",
+  
+  "Community Builder Award – Developers Hub (2024)",
+  "Eureka! Junior Asia-Level Innovation Finalist (AISA) – 2025",
+  "Full-Stack Engineering Excellence – 2025",
 ];
 
 export const Achievements = () => (
