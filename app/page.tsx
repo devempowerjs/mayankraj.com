@@ -5,7 +5,7 @@ import { Projects } from "@/components/main/projects";
 import Skills from "@/components/main/skills";
 import { Achievements } from "@/components/main/achievements";
 
-// yaha pe ye comment nahi hatana mayank error throw kar raha h [ SELF NOTE ]
+// yaha pe ye comment nahi hatana mayank error throw kar raha h [SELF NOTE]
 export default function Home() {
   return (
     <main className="h-full w-full">
