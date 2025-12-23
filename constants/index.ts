@@ -9,7 +9,7 @@ import {
   RxReader,
 } from "react-icons/rx";
 
-// ✅ Define a shared Skill type so TS knows structure even if array is empty
+
 export type Skill = {
   skill_name: string;
   image: string;
@@ -70,19 +70,19 @@ export const BACKEND_SKILL: Skill[] = [
   { skill_name: "MongoDB", image: "mongodb.png", width: 40, height: 40 },
 ];
 
-// ✅ Empty but properly typed — no TypeScript errors
+
 export const FULLSTACK_SKILL: Skill[] = [];
 
 export const OTHER_SKILL: Skill[] = [
   {
     skill_name: "Video Editing",
-    image: "framer.png", // Placeholder
+    image: "framer.png", 
     width: 80,
     height: 80,
   },
   {
     skill_name: "Cinematic Content Creation",
-    image: "go.png", // Placeholder
+    image: "go.png", 
     width: 80,
     height: 80,
   },
