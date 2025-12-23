@@ -37,11 +37,10 @@ export const About = () => {
       >
         <h2 className="text-[36px] font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">About Me</h2>
         <p className="text-lg md:text-xl mb-4">
-          My journey began in Grade 3, when curiosity led me from modding games to mastering full-stack development.<br/><br/>
-          Over the years, I've crafted tools and systems that blend creativity with logic — transforming imagination into interactivity.<br/><br/>
-          Beyond the screen, I capture life through my lens and craft cinematic edits — merging emotion and motion in one frame.<br/><br/>
-          My digital world is driven by innovation, consistency, and passion — every project, a reflection of who I am becoming.<br/>
-        </p>
+  I started in Grade 3, driven by curiosity — modding games and figuring out how things worked behind the screen. That curiosity naturally evolved into a passion for full-stack web development, where I focus on building practical and meaningful systems.<br/><br/>
+  My work has been recognized through the Community Builder Award (2024) for developer contributions, Eureka! Junior Asia-Level Innovation Finalist (AISA) – 2025 for a real-world innovation, and Full-Stack Engineering Excellence – 2025 for advanced web development.<br/><br/>
+  Beyond coding, I pursue photography and cinematic editing to tell visual stories. My goal is to keep learning, building, and growing with purpose.
+</p>
         <p className="italic font-medium text-[16px] text-purple-300 mb-6">— @devempowerjs</p>
         <div className="flex items-center justify-center md:justify-start gap-2 mt-3 text-base md:text-lg text-purple-300 font-medium">
           <RxEnvelopeClosed className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
