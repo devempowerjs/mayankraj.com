@@ -22,6 +22,8 @@ function SEOHead() {
       { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'googlebot', content: 'index, follow' },
       { property: 'og:locale', content: 'en_US' },
+      { name="google-site-verification" content="dFT5pjhdt23l64Ejwyy7IdBbfHV57soPHi1bF-9-ZvQ" },
+
     ];
 
     metaTags.forEach(({ name, property, content }) => {
