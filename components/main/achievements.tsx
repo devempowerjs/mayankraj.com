@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const ACHIEVEMENTS = [
   
   "Community Builder Award – Developers Hub (2024)",
-  "Eureka! Junior Asia-Level Innovation Finalist (AISA) – 2025",
+  "Eureka! Junior Asia-Level Innovation Finalist (AISA) – 2025 by E-Cell IIT Bombay",
   "Full-Stack Engineering Excellence – 2025",
 ];
 
