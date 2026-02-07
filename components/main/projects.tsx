@@ -20,6 +20,7 @@ export const Projects = () => {
             title={project.title}
             description={project.description}
             github={project.github}
+            liveDemo={project.liveDemo}
           />
         ))}
       </div>

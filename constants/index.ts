@@ -94,7 +94,15 @@ export const OTHER_SKILL: Skill[] = [
   },
 ];
 
-export const PROJECTS = [
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  liveDemo?: string;
+};
+
+export const PROJECTS: Project[] = [
   {
     title: "Digital Guard",
     description: "Real-time web security extension keeping you safer online.",
@@ -124,6 +132,20 @@ export const PROJECTS = [
     description: "Securely store and manage your credentials with ease.",
     image: "/projects/passx.webp",
     github: "https://github.com/devempowerjs/PassX_Password_Manager",
+  },
+  {
+    title: "Neumorphism Theme Portfolio Website",
+    description: "Neumorphism-inspired portfolio website designed and developed for a client.",
+    image: "/projects/neumorphism-project.webp",
+    github: "https://github.com/devempowerjs/ayushprabhakhar-neumorphism-theme-website",
+    liveDemo: "https://ayushprabhakhar-neumorphism-theme-w.vercel.app/",
+  },
+  {
+    title: "macOS Theme Portfolio Website",
+    description: "macOS-style portfolio website built for a client.",
+    image: "/projects/macos-project.webp",
+    github: "https://github.com/devempowerjs/ayusharyan-macos-theme-website",
+    liveDemo: "https://aayusharyan28-delta.vercel.app/",
   },
 ];
 
