@@ -62,7 +62,7 @@ HTML, CSS, JavaScript, Tailwind CSS, React, Redux, TypeScript, Next.js, Node.js,
 
    ---
    
-🗂️ ## Project structure
+ ## 🗂️ Project structure
 - app/ — Next.js App Router (layout, pages, globals.css)
 
 - components/main/ — Section components: hero, about, navbar, skills, encryption, projects, achievements, footer, star-background
@@ -79,7 +79,7 @@ HTML, CSS, JavaScript, Tailwind CSS, React, Redux, TypeScript, Next.js, Node.js,
 
   --- 
 
-  📬 ## Contact
+## 📬 Contact
 
 📧 Email: mayankrajpis2013@gmail.com
 
@@ -91,7 +91,7 @@ HTML, CSS, JavaScript, Tailwind CSS, React, Redux, TypeScript, Next.js, Node.js,
 
 ---
 
-📜 License
+## 📜 License
 MIT License
 
 This project is licensed under the MIT License.
