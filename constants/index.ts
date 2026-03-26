@@ -108,6 +108,7 @@ export const PROJECTS: Project[] = [
     description: "Real-time web security extension keeping you safer online.",
     image: "/projects/digitalguard.webp",
     github: "https://github.com/devempowerjs/DigitalGuard",
+    liveDemo: "https://digitalguard.vercel.app/",
   },
   {
     title: "Safepost Checker Website",
@@ -146,6 +147,20 @@ export const PROJECTS: Project[] = [
     image: "/projects/macos-project.webp",
     github: "https://github.com/devempowerjs/ayusharyan-macos-theme-website",
     liveDemo: "https://aayusharyan28-delta.vercel.app/",
+  },
+  {
+    title: "Uday Bhaskar Portfolio Website",
+    description: "A clean, responsive aesthetic portfolio website featuring smooth animations and a modern frontend stack",
+    image: "/projects/udaybhaskarpy.webp",
+    github: "https://github.com/devempowerjs/udaybhaskarpy-website",
+    liveDemo: "https://udaybhaskarpy.vercel.app",
+  },
+  {
+    title: "Kr Sudhanshu Portfolio Website",
+    description: "A modern, scalable, and high performance portfolio website built with a clean architecture and responsive design",
+    image: "/projects/krsudhanshuwebsite.webp",
+    github: "https://github.com/devempowerjs/krsudhanshu-funky-theme-website",
+    liveDemo: "https://krsudhanshu.vercel.app",
   },
 ];
 
