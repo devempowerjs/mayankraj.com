@@ -59,25 +59,12 @@ const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))",
-      gap: "1.5rem",
-      justifyItems: "center",
-      width: "100%",
-    }}
+    className="skills-grid"
   >
     {skillList.map((skill, index) => (
       <div
         key={index}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          transition: "transform 0.2s ease, filter 0.2s ease",
-          cursor: "default",
-        }}
+        className="skill-item"
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1.1)";
           (e.currentTarget as HTMLDivElement).style.filter =
@@ -99,18 +86,7 @@ const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
             target.style.display = "none";
           }}
         />
-        <p
-          style={{
-            marginTop: "0.5rem",
-            fontSize: "0.78rem",
-            color: "rgba(220,220,220,0.9)",
-            lineHeight: 1.3,
-            maxWidth: 90,
-            wordBreak: "break-word",
-          }}
-        >
-          {skill.name}
-        </p>
+        <p className="skill-label">{skill.name}</p>
       </div>
     ))}
   </motion.div>
@@ -122,6 +98,56 @@ const Skills = () => {
       id="skills"
       className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden"
     >
+      {/* Responsive grid styles scoped to the Skills section */}
+      <style>{`
+        .skills-grid {
+          display: grid;
+          /*
+           * clamp(90px, 12vw, 130px) means each column is at least 90px,
+           * grows with the viewport (≈5–7 per row on large screens),
+           * and caps at 130px so items never get too wide.
+           */
+          grid-template-columns: repeat(auto-fill, minmax(clamp(90px, 12vw, 130px), 1fr));
+          gap: 1.75rem 1.5rem;
+          justify-items: center;
+          width: 100%;
+        }
+
+        .skill-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          transition: transform 0.2s ease, filter 0.2s ease;
+          cursor: default;
+        }
+
+        .skill-label {
+          margin-top: 0.5rem;
+          font-size: 0.78rem;
+          color: rgba(220, 220, 220, 0.9);
+          line-height: 1.3;
+          max-width: 90px;
+          word-break: break-word;
+        }
+
+        /* Tablet – 3–4 per row */
+        @media (max-width: 768px) {
+          .skills-grid {
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 1.25rem 1rem;
+          }
+        }
+
+        /* Mobile – 2–3 per row */
+        @media (max-width: 480px) {
+          .skills-grid {
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem 0.75rem;
+          }
+        }
+      `}</style>
+
       {/* 🌌 Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
@@ -141,7 +167,7 @@ const Skills = () => {
           Skills
         </h1>
 
-        {/* 📊 Data Science Section */}
+        {/* 📊 Data Science Section — appears FIRST */}
         <div className="mb-14">
           <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
             📊 Data Science{" "}
@@ -152,7 +178,7 @@ const Skills = () => {
           <SkillGrid skillList={dataScienceSkills} />
         </div>
 
-        {/* 🌐 Development Background Section */}
+        {/* 🌐 Development Background Section — appears BELOW */}
         <div>
           <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
             🌐 Development Background
