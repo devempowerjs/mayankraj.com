@@ -9,6 +9,7 @@ type Skill = {
   src: string;
 };
 
+
 const dataScienceSkills: Skill[] = [
   { name: "Python", src: "/skills/python.png" },
   { name: "NumPy", src: "/skills/numpy.png" },
@@ -38,28 +39,23 @@ const devSkills: Skill[] = [
   { name: "Express.js", src: "/skills/express.png" },
   { name: "MongoDB", src: "/skills/mongodb.png" },
   { name: "PostgreSQL", src: "/skills/postgresql.png" },
-  { name: "MySQL", src: "/skills/mysql.png" },
-  // { name: "Prisma", src: "/skills/prisma.png" },
-  // { name: "GraphQL", src: "/skills/graphql.png" },
-  // { name: "Firebase", src: "/skills/firebase.png" },
-  // { name: "Docker", src: "/skills/docker.png" },
-  // { name: "MUI", src: "/skills/mui.png" },
-  // { name: "Framer Motion", src: "/skills/framer.png" },
   { name: "Figma", src: "/skills/figma.png" },
-  // { name: "Redux", src: "/skills/redux.png" },
-  // { name: "React Native", src: "/skills/reactnative.png" },
   { name: "Stripe", src: "/skills/stripe.png" },
-  // { name: "Tauri", src: "/skills/tauri.png" },
-  // { name: "Go", src: "/skills/go.png" },
 ];
 
-const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
+const SkillGrid = ({
+  skillList,
+  perRow,
+}: {
+  skillList: Skill[];
+  perRow: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
-    className="skills-grid"
+    className={`skills-grid skills-grid-${perRow}`}
   >
     {skillList.map((skill, index) => (
       <div
@@ -98,18 +94,14 @@ const Skills = () => {
       id="skills"
       className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden"
     >
-      {/* Responsive grid styles scoped to the Skills section */}
+      {/* Scoped styles for Skills section only */}
       <style>{`
+        /* ── Base grid: flexbox so last row always centers ── */
         .skills-grid {
-          display: grid;
-          /*
-           * clamp(90px, 12vw, 130px) means each column is at least 90px,
-           * grows with the viewport (≈5–7 per row on large screens),
-           * and caps at 130px so items never get too wide.
-           */
-          grid-template-columns: repeat(auto-fill, minmax(clamp(90px, 12vw, 130px), 1fr));
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           gap: 1.75rem 1.5rem;
-          justify-items: center;
           width: 100%;
         }
 
@@ -120,6 +112,7 @@ const Skills = () => {
           text-align: center;
           transition: transform 0.2s ease, filter 0.2s ease;
           cursor: default;
+          flex: 0 0 auto;
         }
 
         .skill-label {
@@ -131,18 +124,49 @@ const Skills = () => {
           word-break: break-word;
         }
 
-        /* Tablet – 3–4 per row */
-        @media (max-width: 768px) {
+        /* ── Desktop: DS = 7 per row (7+7 equal rows, centered) ── */
+        .skills-grid-7 .skill-item {
+          width: calc(100% / 7 - 1.5rem);
+          max-width: 130px;
+          min-width: 72px;
+        }
+
+        /* ── Desktop: Dev = 8 per row (8 top + 5 bottom centered) ── */
+        .skills-grid-8 .skill-item {
+          width: calc(100% / 8 - 1.5rem);
+          max-width: 130px;
+          min-width: 72px;
+        }
+
+        /* ── Tablet ≤ 900px: 5 per row, centered last row ── */
+        @media (max-width: 900px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 5 - 1.25rem);
+          }
           .skills-grid {
-            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 1.5rem 1.25rem;
+          }
+        }
+
+        /* ── Small tablet ≤ 640px: 4 per row ── */
+        @media (max-width: 640px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 4 - 1rem);
+          }
+          .skills-grid {
             gap: 1.25rem 1rem;
           }
         }
 
-        /* Mobile – 2–3 per row */
+        /* ── Mobile ≤ 480px: 3 per row ── */
         @media (max-width: 480px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 3 - 0.75rem);
+          }
           .skills-grid {
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
             gap: 1rem 0.75rem;
           }
         }
@@ -175,7 +199,8 @@ const Skills = () => {
               (Current Focus)
             </span>
           </h2>
-          <SkillGrid skillList={dataScienceSkills} />
+          {/* 14 skills → perRow=7 → two equal rows of 7, centered */}
+          <SkillGrid skillList={dataScienceSkills} perRow={7} />
         </div>
 
         {/* 🌐 Development Background Section — appears BELOW */}
@@ -183,7 +208,8 @@ const Skills = () => {
           <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
             🌐 Development Background
           </h2>
-          <SkillGrid skillList={devSkills} />
+          {/* 13 skills → perRow=8 → row 1: 8, row 2: 5 centered */}
+          <SkillGrid skillList={devSkills} perRow={8} />
         </div>
       </div>
     </section>
