@@ -59,26 +59,58 @@ const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
-    className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-13 gap-6 justify-items-center"
-    style={{ gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))" }}
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))",
+      gap: "1.5rem",
+      justifyItems: "center",
+      width: "100%",
+    }}
   >
     {skillList.map((skill, index) => (
       <div
         key={index}
-        className="flex flex-col items-center text-center hover:scale-105 transition-transform"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          transition: "transform 0.2s ease, filter 0.2s ease",
+          cursor: "default",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLDivElement).style.transform = "scale(1.1)";
+          (e.currentTarget as HTMLDivElement).style.filter =
+            "drop-shadow(0 0 8px rgba(255,255,255,0.35))";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
+          (e.currentTarget as HTMLDivElement).style.filter = "none";
+        }}
       >
         <Image
           src={skill.src}
           alt={`${skill.name} logo`}
-          width={80}
-          height={80}
-          className="object-contain"
+          width={72}
+          height={72}
+          style={{ objectFit: "contain", width: 72, height: 72 }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.style.display = "none";
           }}
         />
-        <p className="mt-2 text-sm text-gray-200">{skill.name}</p>
+        <p
+          style={{
+            marginTop: "0.5rem",
+            fontSize: "0.78rem",
+            color: "rgba(220,220,220,0.9)",
+            lineHeight: 1.3,
+            maxWidth: 90,
+            wordBreak: "break-word",
+          }}
+        >
+          {skill.name}
+        </p>
       </div>
     ))}
   </motion.div>
