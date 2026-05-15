@@ -9,6 +9,7 @@ type Skill = {
   src: string;
 };
 
+
 const dataScienceSkills: Skill[] = [
   { name: "Python", src: "/skills/python.png" },
   { name: "NumPy", src: "/skills/numpy.png" },
@@ -38,46 +39,28 @@ const devSkills: Skill[] = [
   { name: "Express.js", src: "/skills/express.png" },
   { name: "MongoDB", src: "/skills/mongodb.png" },
   { name: "PostgreSQL", src: "/skills/postgresql.png" },
-  { name: "MySQL", src: "/skills/mysql.png" },
-  // { name: "Prisma", src: "/skills/prisma.png" },
-  // { name: "GraphQL", src: "/skills/graphql.png" },
-  // { name: "Firebase", src: "/skills/firebase.png" },
-  // { name: "Docker", src: "/skills/docker.png" },
-  // { name: "MUI", src: "/skills/mui.png" },
-  // { name: "Framer Motion", src: "/skills/framer.png" },
   { name: "Figma", src: "/skills/figma.png" },
-  // { name: "Redux", src: "/skills/redux.png" },
-  // { name: "React Native", src: "/skills/reactnative.png" },
   { name: "Stripe", src: "/skills/stripe.png" },
-  // { name: "Tauri", src: "/skills/tauri.png" },
-  // { name: "Go", src: "/skills/go.png" },
 ];
 
-const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
+const SkillGrid = ({
+  skillList,
+  perRow,
+}: {
+  skillList: Skill[];
+  perRow: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))",
-      gap: "1.5rem",
-      justifyItems: "center",
-      width: "100%",
-    }}
+    className={`skills-grid skills-grid-${perRow}`}
   >
     {skillList.map((skill, index) => (
       <div
         key={index}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          transition: "transform 0.2s ease, filter 0.2s ease",
-          cursor: "default",
-        }}
+        className="skill-item"
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLDivElement).style.transform = "scale(1.1)";
           (e.currentTarget as HTMLDivElement).style.filter =
@@ -99,18 +82,7 @@ const SkillGrid = ({ skillList }: { skillList: Skill[] }) => (
             target.style.display = "none";
           }}
         />
-        <p
-          style={{
-            marginTop: "0.5rem",
-            fontSize: "0.78rem",
-            color: "rgba(220,220,220,0.9)",
-            lineHeight: 1.3,
-            maxWidth: 90,
-            wordBreak: "break-word",
-          }}
-        >
-          {skill.name}
-        </p>
+        <p className="skill-label">{skill.name}</p>
       </div>
     ))}
   </motion.div>
@@ -122,6 +94,84 @@ const Skills = () => {
       id="skills"
       className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden"
     >
+      {/* Scoped styles for Skills section only */}
+      <style>{`
+        /* ── Base grid: flexbox so last row always centers ── */
+        .skills-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.75rem 1.5rem;
+          width: 100%;
+        }
+
+        .skill-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          transition: transform 0.2s ease, filter 0.2s ease;
+          cursor: default;
+          flex: 0 0 auto;
+        }
+
+        .skill-label {
+          margin-top: 0.5rem;
+          font-size: 0.78rem;
+          color: rgba(220, 220, 220, 0.9);
+          line-height: 1.3;
+          max-width: 90px;
+          word-break: break-word;
+        }
+
+        /* ── Desktop: DS = 7 per row (7+7 equal rows, centered) ── */
+        .skills-grid-7 .skill-item {
+          width: calc(100% / 7 - 1.5rem);
+          max-width: 130px;
+          min-width: 72px;
+        }
+
+        /* ── Desktop: Dev = 8 per row (8 top + 5 bottom centered) ── */
+        .skills-grid-8 .skill-item {
+          width: calc(100% / 8 - 1.5rem);
+          max-width: 130px;
+          min-width: 72px;
+        }
+
+        /* ── Tablet ≤ 900px: 5 per row, centered last row ── */
+        @media (max-width: 900px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 5 - 1.25rem);
+          }
+          .skills-grid {
+            gap: 1.5rem 1.25rem;
+          }
+        }
+
+        /* ── Small tablet ≤ 640px: 4 per row ── */
+        @media (max-width: 640px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 4 - 1rem);
+          }
+          .skills-grid {
+            gap: 1.25rem 1rem;
+          }
+        }
+
+        /* ── Mobile ≤ 480px: 3 per row ── */
+        @media (max-width: 480px) {
+          .skills-grid-7 .skill-item,
+          .skills-grid-8 .skill-item {
+            width: calc(100% / 3 - 0.75rem);
+          }
+          .skills-grid {
+            gap: 1rem 0.75rem;
+          }
+        }
+      `}</style>
+
       {/* 🌌 Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
@@ -141,7 +191,7 @@ const Skills = () => {
           Skills
         </h1>
 
-        {/* 📊 Data Science Section */}
+        {/* 📊 Data Science Section — appears FIRST */}
         <div className="mb-14">
           <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
             📊 Data Science{" "}
@@ -149,15 +199,17 @@ const Skills = () => {
               (Current Focus)
             </span>
           </h2>
-          <SkillGrid skillList={dataScienceSkills} />
+          {/* 14 skills → perRow=7 → two equal rows of 7, centered */}
+          <SkillGrid skillList={dataScienceSkills} perRow={7} />
         </div>
 
-        {/* 🌐 Development Background Section */}
+        {/* 🌐 Development Background Section — appears BELOW */}
         <div>
           <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
             🌐 Development Background
           </h2>
-          <SkillGrid skillList={devSkills} />
+          {/* 13 skills → perRow=8 → row 1: 8, row 2: 5 centered */}
+          <SkillGrid skillList={devSkills} perRow={8} />
         </div>
       </div>
     </section>
