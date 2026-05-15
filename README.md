@@ -1,97 +1,505 @@
-#  Mayank Raj | Personal Portfolio
+# Mayank Raj Portfolio
 
- A full-stack **Next.js 14** portfolio showcasing projects, skills, and achievements. Built with a  dark, space-inspired aesthetic, smooth  animations, and a fully  responsive layout.
+## Overview
 
----
+This project is a modern full stack portfolio website built using Next.js 14, React 18, TypeScript, Tailwind CSS, Framer Motion, and Three.js. The application is designed as a high performance interactive portfolio showcasing projects, technical skills, certifications, achievements, and ongoing work in Data Science, Web Development, Cybersecurity, and Intelligent Systems.
 
-##  About
+The website focuses heavily on smooth user experience, responsive layouts, animation systems, optimized rendering, lazy loading strategies, and scalable component architecture.
 
-I’m **Mayank Raj** (online as **@devempowerjs**) — a full-stack web developer and  student innovator.
-
-My journey started back in **Grade 3** with  game modding and a curiosity about how things work behind the screen. Over time, that curiosity evolved into a strong focus on **full-stack development** and building  practical, production-grade systems.
-
-** Highlights:**  
-Creator of **DigitalGuard**, **PassX**, **SafePost Checker**, **Train Station Indicator**, and **Jarvis Assistant**.  
-Recognized with the ** Community Builder Award (2024)**, ** Eureka! Junior Asia-Level Innovation Finalist – AISA 2025 (E-Cell IIT Bombay)**, and ** Full-Stack Engineering Excellence (2025)**.
-
-Beyond code, I’m interested in  **photography** and  **cinematic editing**. I enjoy contributing to  open source and continuously learning new technologies.
+The application is deployed as a statically optimized Next.js application with interactive client-side experiences.
 
 ---
 
-##  Live site
+# Core Technology Stack
 
- **Live Portfolio:**  
- https://devempowerjs.vercel.app
+## Frontend Framework
 
----
+- Next.js 14.2.35
+- React 18
+- TypeScript 5
 
-##  Tech stack
+## Styling System
 
-- ** Framework:** Next.js 14, React 18, TypeScript  
-- ** Styling:** Tailwind CSS, clsx, tailwind-merge  
-- ** Animation & 3D:** Framer Motion, Three.js, @react-three/fiber, @react-three/drei  
-- ** Icons:** react-icons, @heroicons/react  
-- ** Other:** react-intersection-observer  
+- Tailwind CSS 3
+- PostCSS
+- Autoprefixer
+- Tailwind Merge
+- Clsx
 
-** Skills highlighted on the site:**  
-HTML, CSS, JavaScript, Tailwind CSS, React, Redux, TypeScript, Next.js, Node.js, MongoDB, Express, Figma, and more.
+## Animation and Motion
 
----
+- Framer Motion 10
 
-##  Getting started
+## 3D Rendering
 
-###  Prerequisites
-- Node.js **18+**
-- npm or yarn
+- Three.js
+- React Three Fiber
+- React Three Drei
 
-###  Setup
+## Utility Libraries
 
-1. Clone the repository and install dependencies:
+- React Icons
+- Heroicons
+- React Intersection Observer
 
-   ```bash
-   git clone https://github.com/devempowerjs/mayankraj.com
-   cd mayankraj.com
-   npm install
-   ```
-2. Start the development server:
-   
-   ```bash
-   npm run dev
-   ```
-3. Open http://localhost:3000 in your browser.
+## Analytics
 
-   ---
-   
- ##  Project structure
-- app/ — Next.js App Router (layout, pages, globals.css)
+- Vercel Analytics
 
-- components/main/ — Section components: hero, about, navbar, skills, encryption, projects, achievements, footer, star-background
+## Development Tooling
 
-- components/sub/ — Reusable UI pieces: hero-content, project-card, skill components
-
-- constants/ — Static data: skills, projects, socials, navigation links
-
-- public/ — Static assets: images, certificates, videos, skill icons
-
-- lib/ — Utility functions (motion configs, helpers)
-
-- Root config — Next.js config, Tailwind config, TypeScript config, SEOHead
-
-  --- 
-
-##  Contact
-
- Email: mayankrajpis2013@gmail.com
-
- LinkedIn: https://linkedin.com/in/devempowerjs
-
- GitHub: https://github.com/devempowerjs
-
- Medium: https://medium.com/@devempowerjs
+- ESLint
+- TypeScript
+- Next ESLint Config
 
 ---
 
-##  License
+# Project Features
+
+## Interactive Hero Section
+
+Animated landing section with motion effects, layered rendering, and responsive typography.
+
+## Three.js Space Background
+
+GPU accelerated animated star background powered by React Three Fiber and Three.js.
+
+## Responsive Design System
+
+Fully responsive layouts optimized for desktop, tablet, and mobile devices.
+
+## Project Showcase System
+
+Advanced project section featuring:
+
+- Lazy loading
+- Skeleton loaders
+- Expandable project lists
+- GitHub integration
+- Live demo support
+- Responsive project grids
+- Smooth reveal animations
+
+## Skills Architecture
+
+Organized technical skills grouped into:
+
+- Development Background
+- Data Science Current Focus
+
+## Performance Optimizations
+
+- Intersection Observer based rendering
+- Lazy loaded project cards
+- Lazy loaded images
+- Skeleton shimmer loading states
+- Optimized component rendering
+- Dependency deduplication
+
+## Animation System
+
+Framer Motion powered:
+
+- Fade animations
+- Scroll reveal animations
+- Motion transitions
+- Staggered animations
+- Interactive hover effects
+
+## SEO and Metadata
+
+- Custom metadata handling
+- SEO optimized structure
+- Custom icons and branding assets
+
+---
+
+# Directory Structure
+
+```text
+mayankraj.com/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── favicon.ico
+│   ├── apple-icon.png
+│   ├── icon1.png
+│   └── icon2.png
+│
+├── components/
+│   ├── main/
+│   │   ├── about.tsx
+│   │   ├── achievements.tsx
+│   │   ├── encryption.tsx
+│   │   ├── footer.tsx
+│   │   ├── hero.tsx
+│   │   ├── navbar.tsx
+│   │   ├── projects.tsx
+│   │   └── skills.tsx
+│   │
+│   └── sub/
+│       ├── hero-content.tsx
+│       ├── project-card.tsx
+│       ├── skill-data-provider.tsx
+│       └── skill-text.tsx
+│
+├── config/
+│   └── index.ts
+│
+├── constants/
+│   └── index.ts
+│
+├── lib/
+│   ├── motion.ts
+│   └── utils.ts
+│
+├── public/
+│   ├── certificates/
+│   ├── projects/
+│   ├── skills/
+│   ├── videos/
+│   ├── hero-bg.svg
+│   ├── logo.png
+│   ├── mayank-profile.png
+│   ├── lock-main.png
+│   └── lock-top.png
+│
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── vercel.json
+└── SEOHead.tsx
+```
+
+---
+
+# Public Assets
+
+## Skills Assets
+
+Located in:
+
+```text
+/public/skills
+```
+
+Includes:
+
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- React
+- Next.js
+- Node.js
+- Express
+- MongoDB
+- MySQL
+- Python
+- Flask
+- TensorFlow
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit Learn
+- OpenCV
+- Git
+- GitHub
+- Google Colab
+- Jupyter
+- Figma
+
+## Project Assets
+
+Located in:
+
+```text
+/public/projects
+```
+
+Contains optimized WebP preview cards for:
+
+- Digital Guard
+- CarSalesInsight
+- MusicForecast
+- Forest Fires Occurrence Prediction
+- CarPooling Fare Distribution Algorithm
+- PassX
+- SafePost Checker
+- macOS Portfolio Website
+- Neumorphism Portfolio Website
+- Student Performance DS
+- Kr Sudhanshu Website
+- Uday Bhaskar Portfolio Website
+
+## Video Assets
+
+Located in:
+
+```text
+/public/videos
+```
+
+Includes:
+
+- Blackhole background animation
+- Encryption section video
+- Skills section animated background
+
+## Certificates
+
+Located in:
+
+```text
+/public/certificates
+```
+
+Contains PDF certifications and achievements.
+
+---
+
+# Architecture Overview
+
+## Component Architecture
+
+The application follows a modular component structure.
+
+Main sections are isolated into reusable components.
+
+Subcomponents are separated for:
+
+- Card rendering
+- Skill rendering
+- Motion wrappers
+- Reusable UI sections
+
+## State and Rendering Strategy
+
+Project cards use lazy rendering with Intersection Observer.
+
+Hidden project sections are conditionally mounted only after user interaction.
+
+Skeleton loaders preserve layout dimensions while assets load.
+
+## Styling Architecture
+
+Tailwind CSS utility-first styling.
+
+Global styles handled through:
+
+```text
+app/globals.css
+```
+
+Tailwind configuration located in:
+
+```text
+tailwind.config.ts
+```
+
+## Motion System
+
+Animation utilities centralized in:
+
+```text
+lib/motion.ts
+```
+
+This enables reusable animation presets across sections.
+
+---
+
+# Key Sections
+
+## Hero Section
+
+Primary landing area introducing the portfolio identity.
+
+## About Section
+
+Personal introduction and technical focus.
+
+## Skills Section
+
+Displays categorized technical expertise and current learning focus.
+
+## Projects Section
+
+Features:
+
+- Signature project highlighting
+- Data Science focused ordering
+- Expandable project system
+- Responsive grid rendering
+- Lazy loading
+- Skeleton loading states
+- GitHub integration
+
+## Encryption Section
+
+Animated section themed around cybersecurity and secure systems.
+
+## Achievements Section
+
+Displays certifications, achievements, and recognitions.
+
+## Footer
+
+Contains branding and navigation support.
+
+---
+
+# Dependency Management
+
+The project uses carefully stabilized dependencies to preserve React 18 compatibility.
+
+## Important Compatibility Constraints
+
+React 18 is intentionally preserved because:
+
+- Framer Motion 10
+- React Three Fiber 8
+- React Three Drei 9
+
+are not fully compatible with React 19 workflows.
+
+## Security Hardening
+
+Implemented:
+
+- Minimatch vulnerability overrides
+- PostCSS security patches
+- Dependency deduplication
+- Browserslist updates
+
+## Dependency Overrides
+
+```json
+"overrides": {
+  "minimatch": "^10.0.1",
+  "postcss": "^8.5.10"
+}
+```
+
+---
+
+# Performance Optimizations
+
+## Rendering Optimizations
+
+- Lazy loaded project cards
+- Viewport based rendering
+- Conditional hidden section mounting
+- Skeleton shimmer loading states
+
+## Asset Optimizations
+
+- WebP project assets
+- Optimized static assets
+- Next.js image optimization
+
+## Build Optimizations
+
+- Dependency deduplication
+- Three.js transpilation support
+- Static generation
+
+---
+
+# Development Setup
+
+## Installation
+
+```bash
+npm install
+```
+
+## Development Server
+
+```bash
+npm run dev
+```
+
+## Production Build
+
+```bash
+npm run build
+```
+
+## Production Start
+
+```bash
+npm run start
+```
+
+## Linting
+
+```bash
+npm run lint
+```
+
+---
+
+# Build and Deployment
+
+## Framework
+
+Next.js static optimized deployment.
+
+## Hosting
+
+Optimized for Vercel deployment.
+
+## Configuration Files
+
+```text
+next.config.js
+vercel.json
+postcss.config.js
+tailwind.config.ts
+tsconfig.json
+```
+
+---
+
+# Technical Highlights
+
+- Next.js App Router architecture
+- TypeScript based codebase
+- Framer Motion animation system
+- Three.js powered rendering
+- Tailwind CSS design system
+- Responsive grid architecture
+- Intersection Observer based lazy rendering
+- Skeleton loading implementation
+- Performance optimized project rendering
+- Modular reusable component structure
+- Security hardened dependency graph
+
+---
+
+# Author
+
+Mayank Raj
+
+## GitHub
+
+```text
+https://github.com/devempowerjs
+```
+
+## Portfolio
+
+```text
+https://mayankraj.com
+```
+
+---
+
+# License
+
 MIT License
-
-This project is licensed under the MIT License.
