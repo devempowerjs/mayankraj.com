@@ -66,3 +66,18 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ── Skeleton shimmer animation ── */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.skeleton-shimmer {
+  animation: shimmer 1.6s infinite linear;
+}
+

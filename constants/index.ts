@@ -98,48 +98,65 @@ export type Project = {
   title: string;
   description: string;
   image: string;
-  github: string;
+  github?: string;
   liveDemo?: string;
+  isSignature?: boolean;
+  isHidden?: boolean;
 };
 
-export const PROJECTS: Project[] = [
+export const SIGNATURE_PROJECT: Project = {
+  title: "Digital Guard",
+  description: "Real-time web security extension keeping you safer online.",
+  image: "/projects/digitalguard.webp",
+  github: "https://github.com/devempowerjs/DigitalGuard",
+  liveDemo: "https://digitalguard.vercel.app/",
+  isSignature: true,
+};
+
+export const DEFAULT_PROJECTS: Project[] = [
   {
-    title: "Digital Guard",
-    description: "Real-time web security extension keeping you safer online.",
-    image: "/projects/digitalguard.webp",
-    github: "https://github.com/devempowerjs/DigitalGuard",
-    liveDemo: "https://digitalguard.vercel.app/",
+    title: "CarSalesInsight",
+    description:
+      "Analyzes car sales data (2000–2024), predicts 2025 sales using linear regression, and visualizes insights.",
+    image: "/projects/carsalesinsight.webp",
+    github: "https://github.com/devempowerjs/CarSalesInsight",
   },
   {
-    title: "Safepost Checker Website",
-    description: "Instantly checks post safety using advanced algorithms.",
-    image: "/projects/safepost.webp",
-    github: "https://github.com/devempowerjs/SafePost-Checker-Extension",
+    title: "MusicForecast",
+    description:
+      "Predicts song popularity using features like tempo, duration, genre, and release year with machine learning models.",
+    image: "/projects/musicforecast.webp",
+    github: "https://github.com/devempowerjs/MusicForecast",
   },
   {
-    title: "Train Station Indicator",
-    description: "Live status displays for every Indian train traveler.",
-    image: "/projects/trainstation.webp",
-    github: "https://github.com/devempowerjs/train-station-indicator",
+    title: "ForestFiresOccPrediction",
+    description: "Predicts forest fire occurrence using logistic regression.",
+    image: "/projects/forestfiresoccurenceprediction.webp",
+    github: "https://github.com/devempowerjs/ForestFiresOccPrediction",
+  },
+];
+
+export const HIDDEN_PROJECTS: Project[] = [
+  {
+    title: "CarSalesForecast",
+    description:
+      "Analyzes and visualizes large-scale car sales data and predicts trends.",
+    image: "/projects/carsalesforcast.webp",
+    github: "https://github.com/devempowerjs/CarSalesForecast",
   },
   {
-    title: "Jarvis Virtual Assistant",
-    description: "Voice-activated desktop assistant for everyday tasks.",
-    image: "/projects/jarvis.webp",
-    github: "https://github.com/devempowerjs/Jarvis-Virtual-Assistant",
+    title: "CarPoolingFareDistAlgorithm",
+    description:
+      "Algorithm to fairly distribute ride fares based on boarding, drop points, and waiting time.",
+    image: "/projects/carpoolingfaredistributionalogrithm.webp",
+    github: "https://github.com/devempowerjs/CarPoolingFareDistAlgorithm",
   },
   {
-    title: "PassX Password Manager",
-    description: "Securely store and manage your credentials with ease.",
-    image: "/projects/passx.webp",
-    github: "https://github.com/devempowerjs/PassX_Password_Manager",
-  },
-  {
-    title: "Neumorphism Theme Portfolio Website",
-    description: "Neumorphism-inspired portfolio website designed and developed for a client.",
-    image: "/projects/neumorphism-project.webp",
-    github: "https://github.com/devempowerjs/ayushprabhakhar-neumorphism-theme-website",
-    liveDemo: "https://ayushprabhakhar-neumorphism-theme-w.vercel.app/",
+    title: "student-performance-ds",
+    description:
+      "Data science project analyzing and predicting student performance trends.",
+    image: "/projects/studentperformanceds.webp",
+    github: "https://github.com/devempowerjs/student-performance-ds",
   },
   {
     title: "macOS Theme Portfolio Website",
@@ -149,20 +166,42 @@ export const PROJECTS: Project[] = [
     liveDemo: "https://aayusharyan28-delta.vercel.app/",
   },
   {
+    title: "Neumorphism Theme Portfolio Website",
+    description: "Neumorphism-inspired portfolio for a client.",
+    image: "/projects/neumorphism-project.webp",
+    github: "https://github.com/devempowerjs/ayushprabhakhar-neumorphism-theme-website",
+    liveDemo: "https://ayushprabhakhar-neumorphism-theme-w.vercel.app/",
+  },
+  {
     title: "Uday Bhaskar Portfolio Website",
-    description: "A clean, responsive aesthetic portfolio website featuring smooth animations and a modern frontend stack",
+    description: "Clean, responsive portfolio with smooth animations.",
     image: "/projects/udaybhaskarpy.webp",
     github: "https://github.com/devempowerjs/udaybhaskarpy-website",
     liveDemo: "https://udaybhaskarpy.vercel.app",
   },
   {
     title: "Kr Sudhanshu Portfolio Website",
-    description: "A modern, scalable, and high performance portfolio website built with a clean architecture and responsive design",
+    description: "High-performance, scalable portfolio with clean architecture.",
     image: "/projects/krsudhanshuwebsite.webp",
     github: "https://github.com/devempowerjs/krsudhanshu-funky-theme-website",
     liveDemo: "https://krsudhanshu.vercel.app",
   },
+  {
+    title: "Safepost Checker Extension",
+    description: "Instantly checks post safety using advanced algorithms.",
+    image: "/projects/safepost.webp",
+    github: "https://github.com/devempowerjs/SafePost-Checker-Extension",
+  },
+  {
+    title: "PassX Password Manager",
+    description: "Securely store and manage credentials with ease.",
+    image: "/projects/passx.webp",
+    github: "https://github.com/devempowerjs/PassX_Password_Manager",
+  },
 ];
+
+// Legacy export kept for backward compatibility (unused after refactor)
+export const PROJECTS: Project[] = [SIGNATURE_PROJECT, ...DEFAULT_PROJECTS, ...HIDDEN_PROJECTS];
 
 export const FOOTER_DATA = [
   {
