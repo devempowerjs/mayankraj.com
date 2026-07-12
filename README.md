@@ -195,23 +195,11 @@ Includes:
 - React
 - Next.js
 - Node.js
-- Express
 - MongoDB
 - MySQL
 - Python
-- Flask
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit Learn
-- OpenCV
 - Git
 - GitHub
-- Google Colab
-- Jupyter
-- Figma
 
 ## Project Assets
 
