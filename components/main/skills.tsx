@@ -9,25 +9,11 @@ type Skill = {
   src: string;
 };
 
-
-const dataScienceSkills: Skill[] = [
+const skills: Skill[] = [
   { name: "Python", src: "/skills/python.png" },
-  { name: "NumPy", src: "/skills/numpy.png" },
-  { name: "Pandas", src: "/skills/pandas.png" },
-  { name: "Matplotlib", src: "/skills/matplotlib.png" },
-  { name: "Seaborn", src: "/skills/seaborn.png" },
-  { name: "Scikit-Learn", src: "/skills/scikit-learn.png" },
-  { name: "TensorFlow", src: "/skills/tensorflow.png" },
-  { name: "OpenCV", src: "/skills/opencv.png" },
-  { name: "Jupyter", src: "/skills/jupyter.png" },
-  { name: "Google Colab", src: "/skills/google-colab.png" },
-  { name: "Flask", src: "/skills/flask.png" },
   { name: "MySQL", src: "/skills/mysql.png" },
   { name: "Git", src: "/skills/git.png" },
   { name: "GitHub", src: "/skills/github.png" },
-];
-
-const devSkills: Skill[] = [
   { name: "HTML", src: "/skills/html.png" },
   { name: "CSS", src: "/skills/css.png" },
   { name: "JavaScript", src: "/skills/js.png" },
@@ -36,11 +22,7 @@ const devSkills: Skill[] = [
   { name: "Next.js", src: "/skills/next.png" },
   { name: "Tailwind CSS", src: "/skills/tailwind.png" },
   { name: "Node.js", src: "/skills/node.png" },
-  { name: "Express.js", src: "/skills/express.png" },
   { name: "MongoDB", src: "/skills/mongodb.png" },
-  { name: "PostgreSQL", src: "/skills/postgresql.png" },
-  { name: "Figma", src: "/skills/figma.png" },
-  { name: "Stripe", src: "/skills/stripe.png" },
 ];
 
 const SkillGrid = ({
@@ -191,25 +173,8 @@ const Skills = () => {
           Skills
         </h1>
 
-        {/* 📊 Data Science Section — appears FIRST */}
         <div className="mb-14">
-          <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
-            📊 Data Science{" "}
-            <span className="text-base font-normal text-gray-400">
-              (Current Focus)
-            </span>
-          </h2>
-          {/* 14 skills → perRow=7 → two equal rows of 7, centered */}
-          <SkillGrid skillList={dataScienceSkills} perRow={7} />
-        </div>
-
-        {/* 🌐 Development Background Section — appears BELOW */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-6 text-white/90 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">
-            🌐 Development Background
-          </h2>
-          {/* 13 skills → perRow=8 → row 1: 8, row 2: 5 centered */}
-          <SkillGrid skillList={devSkills} perRow={8} />
+          <SkillGrid skillList={skills} perRow={7} />
         </div>
       </div>
     </section>

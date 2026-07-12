@@ -21,7 +21,7 @@ export const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] h-4 w-4 md:h-5 md:w-5" />
           <h1 className="text-[12px] md:text-[13px] text-gray-200 font-semibold">
-            Data Science Enthusiast • Student Innovator • Open-Source Creator • Tech Explorer
+            Building Software That Matters
           </h1>
         </motion.div>
 
@@ -38,7 +38,7 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-base sm:text-lg text-gray-400 my-3 sm:my-4 max-w-[500px] mx-auto md:mx-0"
         >
-          Turning data into insights and ideas into real-world solutions. I build data-driven applications using Python, machine learning, and modern technologies — backed by strong full-stack fundamentals.
+          I enjoy building real-world software systems and solving engineering problems. I build impactful applications using Python, JavaScript, and modern web technologies — backed by strong computer science fundamentals.
         </motion.p>
 
         {/* Call-to-Action Button */}

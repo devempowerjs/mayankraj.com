@@ -66,7 +66,7 @@ export const Projects = () => {
       <div className="w-full max-w-5xl">
         {/* Sub-heading */}
         <h2 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 text-center tracking-wide uppercase">
-          Data Science &amp; ML
+          Learning Projects
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center w-full">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "Mayank Raj  | Space Portfolio",
-  description: "Welcome to my full-stack Next.js 14 space portfolio.",
+  title: "Mayank Raj (devempowerjs) | Building Software That Matters",
+  description: "Mayank Raj (devempowerjs) is a software developer passionate about building impactful software, open-source projects, and modern web applications.",
   keywords: [
     "reactjs",
     "nextjs",

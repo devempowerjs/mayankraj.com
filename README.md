@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a modern full stack portfolio website built using Next.js 14, React 18, TypeScript, Tailwind CSS, Framer Motion, and Three.js. The application is designed as a high performance interactive portfolio showcasing projects, technical skills, certifications, achievements, and ongoing work in Data Science, Web Development, Cybersecurity, and Intelligent Systems.
+This project is a modern full stack portfolio website built using Next.js 14, React 18, TypeScript, Tailwind CSS, Framer Motion, and Three.js. The application is designed as a high performance interactive portfolio showcasing projects, technical skills, certifications, achievements, and ongoing work in Software Development, Web Development, Cybersecurity, and Intelligent Systems.
 
 The website focuses heavily on smooth user experience, responsive layouts, animation systems, optimized rendering, lazy loading strategies, and scalable component architecture.
 
@@ -84,8 +84,7 @@ Advanced project section featuring:
 
 Organized technical skills grouped into:
 
-- Development Background
-- Data Science Current Focus
+- Core Technologies
 
 ## Performance Optimizations
 
@@ -194,24 +193,13 @@ Includes:
 - TypeScript
 - React
 - Next.js
+- Tailwind CSS
 - Node.js
-- Express
 - MongoDB
 - MySQL
 - Python
-- Flask
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit Learn
-- OpenCV
 - Git
 - GitHub
-- Google Colab
-- Jupyter
-- Figma
 
 ## Project Assets
 
@@ -332,7 +320,7 @@ Displays categorized technical expertise and current learning focus.
 Features:
 
 - Signature project highlighting
-- Data Science focused ordering
+- Learning Projects focused ordering
 - Expandable project system
 - Responsive grid rendering
 - Lazy loading
